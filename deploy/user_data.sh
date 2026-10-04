@@ -20,6 +20,7 @@ python3.11 -m venv venv
 curl -fsSL https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem -o /opt/freshmart/rds-ca.pem
 
 # 2. Settings. DB password comes from SSM Parameter Store (encrypted), never from code.
+set +x   # stop command echo: the next lines handle the DB password and must never be logged
 DB_URL=$(aws ssm get-parameter --name /freshmart/db_url --with-decryption \
           --query Parameter.Value --output text --region "$REGION")
 cat > /opt/freshmart/.env <<EOF
@@ -30,6 +31,7 @@ DB_URL=$DB_URL
 EOF
 chmod 600 /opt/freshmart/.env
 set -a; . /opt/freshmart/.env; set +a
+set -x
 
 # 3. Create tables on RDS
 ./venv/bin/python src/init_db.py
