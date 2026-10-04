@@ -33,7 +33,7 @@ for g in "${NAME}-db-sg" "${NAME}-app-sg"; do
   [ "$id" != "None" ] && [ -n "$id" ] && aws ec2 delete-security-group --group-id "$id" && echo "Deleted $g"
 done
 
-aws ssm delete-parameter --name "/${NAME}/db_url" 2>/dev/null
+aws ssm delete-parameters --names "/${NAME}/db_url" "/${NAME}/db_password" >/dev/null 2>&1
 
 echo "Emptying and deleting bucket $BUCKET (including old versions)"
 python3 - "$BUCKET" <<'EOF'

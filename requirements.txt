@@ -6,3 +6,4 @@ sqlalchemy
 streamlit
 matplotlib
 pytest
+cryptography

@@ -91,7 +91,7 @@ if ! aws rds describe-db-instances --db-instance-identifier "${NAME}-db" >/dev/n
             --query 'DBInstances[0].Endpoint.Address' --output text)
   # Store the connection string encrypted in SSM Parameter Store
   aws ssm put-parameter --name "/${NAME}/db_url" --type SecureString --overwrite \
-    --value "mysql+pymysql://admin:${DB_PASS}@${DB_HOST}:3306/freshmart" >/dev/null
+    --value "mysql+pymysql://admin:${DB_PASS}@${DB_HOST}:3306/freshmart?ssl_ca=/opt/freshmart/rds-ca.pem" >/dev/null
 else
   echo "RDS already exists"
   aws rds wait db-instance-available --db-instance-identifier "${NAME}-db"

@@ -16,6 +16,9 @@ cd /opt/freshmart
 python3.11 -m venv venv
 ./venv/bin/pip install --quiet -r requirements.txt
 
+# RDS certificate so the DB connection is encrypted (SSL)
+curl -fsSL https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem -o /opt/freshmart/rds-ca.pem
+
 # 2. Settings. DB password comes from SSM Parameter Store (encrypted), never from code.
 DB_URL=$(aws ssm get-parameter --name /freshmart/db_url --with-decryption \
           --query Parameter.Value --output text --region "$REGION")
