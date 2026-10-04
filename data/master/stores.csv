@@ -1,0 +1,11 @@
+store_id,city,region,store_manager
+S001,Delhi,North,Manager 1
+S002,Gurugram,North,Manager 2
+S003,Noida,North,Manager 3
+S004,Chandigarh,North,Manager 4
+S005,Jaipur,West,Manager 5
+S006,Lucknow,Central,Manager 6
+S007,Delhi,North,Manager 7
+S008,Gurugram,North,Manager 8
+S009,Noida,North,Manager 9
+S010,Chandigarh,North,Manager 10

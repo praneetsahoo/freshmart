@@ -1,0 +1,21 @@
+product_id,product_name,category,list_price
+P001,Basmati Rice 5kg,Grains,650
+P002,Wheat Atta 10kg,Grains,480
+P003,Toor Dal 1kg,Pulses,160
+P004,Moong Dal 1kg,Pulses,140
+P005,Amul Milk 1L,Dairy,68
+P006,Paneer 200g,Dairy,90
+P007,Curd 400g,Dairy,45
+P008,Tomato 1kg,Vegetables,40
+P009,Onion 1kg,Vegetables,35
+P010,Potato 1kg,Vegetables,30
+P011,Banana Dozen,Fruits,60
+P012,Apple 1kg,Fruits,180
+P013,Sunflower Oil 1L,Oils,150
+P014,Mustard Oil 1L,Oils,170
+P015,Tea 500g,Beverages,260
+P016,Coffee 200g,Beverages,320
+P017,Biscuits Pack,Snacks,30
+P018,Chips 100g,Snacks,20
+P019,Detergent 1kg,Household,120
+P020,Soap Pack of 4,Household,110
